@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+<meta charset="utf-8">
+<script type="text/javascript">
+	var lineHeight=15;
+	var links;
+	var nodes;
+</script>
+
+<link rel="stylesheet" type="text/css" href="timeline.css">
+<script type="text/javascript" src="d3.js"></script>
+<script type="text/javascript" src="Event.js"></script>
+
+
+<body>
+<div id="zoomGraph" style="width:50%;height:100%;overflow:hidden;position:absolute;left:0;top:0">
+	<svg id="svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version ="1.1" width="100%" height="100%">
+		<defs>
+		<g id="rect">
+			<rect id="line" x="0" y="0" width="10" height="1" />
+		</g>
+		<pattern id="Pattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+			<g id="horz"  transform="translate(0,5)">
+				<use   xlink:href="#rect"></use>
+			</g>
+			
+			<g id="vert" transform="translate(5,0)">
+				<use  xlink:href="#rect" transform="rotate(90,0,0)"></use>
+			</g>
+			
+		</pattern> 
+		</defs>
+		<rect id="grid" fill="url(#Pattern)" x="0" y="0" width="100000" height="100000" />
+	
+	</svg>
+	<div style="position: absolute; left:0;top:0;width:100%">
+		
+		<div class ="text"style="position:absolute;display:block;opacity:1;width:100%;background-color:rgba(255,255,255,0.85)">
+			
+			Pinch grid  or scroll to zoom;<br/>
+			Hold Shift key to zoom in y-direction with mouse;<br/>
+			X-scale:
+			<div id ="scaleX" style="display:inline">
+				1.0
+			</div>
+			<br/>
+			Y-Scale:
+			<div id="scaleY" style="display:inline">
+				1.0
+			</div>
+			
+		</div>
+			
+	</div>
+</div>
+<div id="dragGraph" style="width:50%;height:100%;overflow:hidden;position:absolute;top:0;right:0">
+	<div id="dragger" style="position:absolute;left:25%;top:12.5%;width:50%;height:25%;background-color:teal;text-align:center"><h1>Drag Me!</h1></div>
+	<div id="dragger1" style="position:absolute;left:25%;top:62.5%;width:50%;height:25%;background-color:orange;text-align:center"><h1>Me Too!</h1></div>
+</div>
+<script type="text/javascript" >
+	var baseGrid = 30;
+	
+zoom = d3.behavior.directionalZoom().scaleExtent([[0.1,Infinity],[0.1,Infinity]]).on("zoom",function(){
+	
+	setPattern(d3.event.scale[0]*baseGrid,d3.event.scale[1]*baseGrid,d3.event.translate);
+	scaleX.innerHTML=d3.event.scale[0];
+	scaleY.innerHTML=d3.event.scale[1];
+});
+
+d3.select(svg).call(zoom);
+
+function setPattern(w,h,off){
+	Pattern.setAttribute("height",h);
+	Pattern.setAttribute("width",w);
+	Pattern.setAttribute("x",off[0]%w);
+	Pattern.setAttribute("y",off[1]%h);
+	line.setAttribute("width",Math.max(h,w));
+	horz.setAttribute("transform","translate(0,"+((h/2)||Number.MIN_VALUE)+")")
+	vert.setAttribute("transform","translate("+((w/2)||Number.MIN_VALUE)+",0)");
+	
+}
+
+setPattern(baseGrid,baseGrid,[0,0]);
+
+drag = d3.behavior.drag();
+var ev;
+drag.on("dragstart",function(){
+	if(typeof(this.bg)=="undefined")this.bg=this.style["background-color"];
+	d3.select(this).style("background-color","silver");
+})
+
+drag.on("drag",function(){
+	//console.info(this.offsetLeft);
+	//console.info({left:(this.offsetLeft+d3.event.dx),top:(this.offsetTop+d3.event.dy)});
+	this.style.left=(this.offsetLeft+d3.event.dx)+"px";
+	this.style.top=(this.offsetTop+d3.event.dy)+"px";
+});
+drag.on("dragend",function(){
+	if(typeof(this.bg)!="undefined")d3.select(this).style("background-color",this.bg);
+	this.bg=undefined;
+})
+d3.select("#dragGraph").selectAll("div").call(drag);
+//d3.select(dragger1).call(drag);
+</script>
+</script>
+</body>
+</html>

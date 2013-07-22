@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version ="1.1" width="100" height="100">
+  <g id="resize_right" transform="translate(50,0)" class="button">
+    <rect x="2.5" y="5" width="5" height="90"></rect>
+    <path d="M 12.5 43.75 l18.75 0 l0 -25 l17.1875 31.25 l-17.1875 31.25 l0-25 l-18.75 0 Z"></path>
+  </g>
+  <use xlink:href="#resize_right" transform="rotate(180,50,50)"></use>
+</svg>

@@ -1,0 +1,38 @@
+<svg width="20" height="20" style="position: absolute; top: 8px; right: 0px; ">
+<g class="button" fill-opacity="1">
+<rect x="0" y="0" width="11.666666666666666" height="2">
+</rect>
+<rect x="0" y="0" width="2" height="20">
+</rect>
+<rect x="0" y="18" width="20" height="2">
+</rect>
+<rect x="0" y="0" width="2" height="20">
+</rect>
+<rect x="18" y="8.333333333333334" width="2" height="11.666666666666666">
+</rect>
+<g transform="rotate(270,10,10)">
+<path d="M3 3 l8.333333333333334 0 l-8.333333333333334 8.333333333333334 Z">
+</path>
+<rect x="5.959559885480119" y="7.5" width="13.333333333333334" height="5" transform="rotate(45,10,10)">
+</rect>
+</g>
+</g>
+<g fill-opacity="0" class="button">
+<rect x="0" y="0" width="7.5" height="2">
+</rect>
+<rect x="0" y="0" width="2" height="20">
+</rect>
+<rect x="0" y="18" width="20" height="2">
+</rect>
+<rect x="0" y="0" width="2" height="20">
+</rect>
+<rect x="18" y="12.5" width="2" height="7.5">
+</rect>
+<g transform="translate(2,-2)rotate(90,10,10)">
+<path d="M3 3 l8.333333333333334 0 l-8.333333333333334 8.333333333333334 Z">
+</path>
+<rect x="5.959559885480119" y="7.5" width="13.333333333333334" height="5" transform="rotate(45,10,10)">
+</rect>
+</g>
+</g>
+</svg>

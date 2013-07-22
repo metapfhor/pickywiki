@@ -1,0 +1,48 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version ="1.1" width="100" height="100" id="expandButton" >
+  <g class="button" fill-opacity="0" >
+    <rect x="0" y="0" width="58.33333333333333" height="10"></rect>
+    <rect x="0" y="0" width="10" height="100"></rect>
+    <rect x="0" y="90" width="100" height="10"></rect>
+    <rect x="0" y="0" width="10" height="100"></rect>
+    <rect x="90" y="41.66666666666667" width="10" height="58.33333333333333"></rect>
+    <g id="gMinimize" transform="rotate(270,50,50)">
+      <path d="M 20 20 l41.66666666666667 0 l-41.66666666666667 41.66666666666667 Z"></path>
+      <rect x="32.62622655214679" y="37.5" width="66.66666666666667" height="25" transform="rotate(45,50,50)"></rect>
+    </g>
+  </g>
+  <g class="button" fill-opacity="1" >
+    <rect x="0" y="0" width="49.99999999999999" height="10"></rect>
+    <rect x="0" y="0" width="10" height="100"></rect>
+    <rect x="0" y="90" width="100" height="10"></rect>
+    <rect x="0" y="0" width="10" height="100"></rect>
+    <rect x="90" y="50.00000000000001" width="10" height="49.99999999999999"></rect>
+    <g id="gExpand" transform="translate(0,-0)rotate(90,50,50)">
+      <path d="M 0 0 l41.66666666666667 0 l-41.66666666666667 41.66666666666667 Z"></path>
+      <rect x="2.928932188134524" y="37.5" width="80" height="25" transform="rotate(45,50,50)"></rect>
+    </g>
+  </g>
+  <script type="text/javascript">
+
+    (function(){
+		  var minimize = document.getElementById("gMinimize");
+		  var expand = document.getElementById("gExpand");
+		  function setExpand(){
+		  	minimize.setAttribute("fill-opacity",0);
+		  	expand.setAttribute("fill-opacity",1);
+		  }
+		  function setMinimize(){
+		  	expand.setAttribute("fill-opacity",0);
+		  	minimize.setAttribute("fill-opacity",1);
+		  }
+		  var button = document.getElementById("expandButton")
+		  button.expand=setExpand;
+		  button.minimize=setMinimize;
+		  setExpand();
+    })()
+
+  </script>
+</svg>

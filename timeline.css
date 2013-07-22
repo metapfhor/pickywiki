@@ -1,0 +1,137 @@
+html {
+	height:100%;
+	width:100%;
+}
+
+body {
+	font: 12px sans-serif;
+	height: 100%;
+	width:100%;
+	margin:0;
+	-webkit-backface-visibility: hidden;
+}
+
+.x.axis g {
+	pointer-events:visiblePainted;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.x.axis line {
+	stroke: #DDD;
+	stroke-dasharray: 2,2;
+	shape-rendering: crispEdges;
+}
+
+.x.axis text {
+	fill: #DDD;
+}
+
+.x.axisTip line {
+	stroke:red;
+	stroke-width:10px;
+	stroke-opacity:0.4;
+}
+
+
+div.plot{
+	background-color: #333;
+}
+
+div.event{
+	position: absolute;
+	border-left-style: solid;
+	border-left-width: 1px;
+	vertical-align: middle;
+	border-left-color: black;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	pointer-events:auto;
+}
+
+div.fadedEvent{
+	position: absolute;
+	border-left-style: solid;
+	border-left-width: 1px;
+	vertical-align: middle;
+	border-left-color: black;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+rect.event{
+	fill: #EEE;
+	fill-opacity: 0.8;
+}
+
+rect.eventHi{
+	fill: khaki;
+	fill-opacity: 0.8;
+}
+rect.eventSel{
+	stroke: khaki;
+	stroke-width: 1;
+	stroke-opacity: 0.7;
+	fill: khaki;
+	fill-opacity: 1;
+}
+
+line.link{
+  stroke-width:1;
+  stroke:#DDD;
+}
+line.linkHi{
+  stroke-width:3;
+  stroke:khaki;
+}
+line.fadedLink{
+  stroke-width:1;
+  stroke:#DDD;
+}
+line.hidden{
+  stroke-opacity:0;
+}
+
+.fadeIn{
+	-webkit-animation: fadeIn 750ms linear 0s 1 normal;
+	-webkit-animation-play-state: running;
+	opacity:1 !important;
+}
+
+.fadeOut{
+	-webkit-animation: fadeOut 750ms linear 0s 1 normal;
+	-webkit-animation-play-state: running;
+	opacity:0 !important;
+}
+
+.button{
+	fill: black;
+}
+
+.buttonHi{
+	fill: khaki;
+}
+
+.control{
+	background-color:#C0C0C0;
+}
+
+
+@-webkit-keyframes fadeIn
+{
+0%   {opacity: 0; }
+100%  {opacity: 1;}
+}
+
+@-webkit-keyframes fadeOut
+{
+0%   {opacity: 1;}
+100%  {opacity: 0;}
+}
+
+.pwLine{
+	height:15px;
+	font-size:12px;
+}
