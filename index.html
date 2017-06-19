@@ -1,0 +1,35 @@
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script src="springy.js"></script>
+<script src="graph.js"></script>
+</head>
+
+<body>
+<div style="position: relative">
+<div style="position: absolute; left: 0; width: 69%; overflow: auto">
+<canvas id="canvas" width="1000" height="600"></canvas>
+</div>
+<div style="position: absolute; left: 70%; width: 28%">
+<div id="filters" style="padding: 5px;background: #ddd; font: 10px sans-serif;">
+Relations | Timeline<br />
+Filter text: <input type="text" /> <input type="checkbox" /> links<br />
+Endangers | Helps | Causes | Requires | Links | 2011 | 2012
+<div id="dims" />
+</div>
+</div>
+<div id="contents" />
+</div>
+
+<style>
+canvas {
+	border: 1px solid #AAA;
+	background-color: #F6F6F6;
+}
+
+</style>
+
+
+</body>
+</html>
+

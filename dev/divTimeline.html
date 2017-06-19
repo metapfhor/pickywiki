@@ -1,0 +1,52 @@
+<html>
+<meta charset="utf-8">
+<style>
+
+html {
+	height:100%;
+	width:100%;
+}
+
+body {
+	font: 12px sans-serif;
+	height: 100%;
+	width:100%;
+	margin:0;
+}
+
+div {
+	height:100%;
+	margin:0;
+	padding:0;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.x.axis line {
+  stroke: #000;
+  stroke-dasharray: 2,2;
+  
+}
+
+</style>
+<script type="text/javascript" src="d3.v3.android.js"></script>
+<script type="text/javascript" src="divTimeline.js"></script>
+<script type="text/javascript" src="d3-stripPacker.js"></script>
+<script type="text/javascript" src="d3-quickMDS.js"></script>
+<script type="text/javascript" src="http://access.fungalgenomics.ca/:8000/faye/client.js"></script>
+
+<script type="text/javascript" src="d3-collapsibleFrame.js"></script>
+<body><div id="graph" style="width:100%;height:100%;overflow:auto"></div>
+<script type="text/javascript" src="mapping-timeline.js">
+</script>
+</body>
+</html>

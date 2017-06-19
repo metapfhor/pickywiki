@@ -1,0 +1,39 @@
+<html>
+<meta charset="utf-8">
+<style>
+
+html {
+	height:100%;
+	width:100%;
+}
+
+body {
+	font: 12px sans-serif;
+	height: 100%;
+	width:100%;
+	margin:0;
+}
+
+.smwtimeline{
+	visibility:hidden;
+}
+
+.ticketsystem a{
+	visibility:hidden;
+	color:orange;
+}
+
+
+
+</style>
+<script type="text/javascript" src="d3.v3.android.js"></script>
+<script type="text/javascript" src="shiftFrame.js"></script>
+<body >
+
+<div id="frame" style="height:100%;overflow:hidden">
+<script type="text/javascript">
+d3.shiftFrame(d3.select("#frame")).load("https://intranet.fungalgenomics.ca/intwiki/Ticket:PickyWiki?action=render");
+</script>
+</div>
+</body>
+</html>
